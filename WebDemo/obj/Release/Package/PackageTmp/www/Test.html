@@ -6,10 +6,11 @@
     <script src="jquery-2.2.4.min.js"></script>
     <script>
         var uuid = uuid();
-
+        //var host = "macwechat.keduoduo.online";
+        var host = "localhost:55355";
         if ("WebSocket" in window) {
             // 打开一个 web socket
-            var ws = new WebSocket("ws://localhost:55355/api/wechat/socket/connect?uuid=" + uuid);
+            var ws = new WebSocket("ws://" + host+"/api/wechat/socket/connect?uuid=" + uuid);
             ws.onopen = function () {
                 // Web Socket 已连接上，使用 send() 方法发送数据
                 //扫码登录
@@ -65,6 +66,18 @@
             var uuid = s.join("");
             return uuid;
         }
+
+        function test() {
+            $.post("http://" + host + "/api/wechat/msg/sendtext",
+                {
+                    "wxid": "xuzeyu91",
+                    "text": "1111",
+                    "uuid": uuid
+                },
+                function (result) {
+                    console.log(result);
+            });
+        }
     </script>
 </head>
 <body>
@@ -72,6 +85,8 @@
         <div>
             <img id="qrCode" src="">
         </div>
+
+        <button onclick="test()">测试接口</button>
     </div>
 </body>
 </html>

@@ -32,5 +32,16 @@ namespace WebDemo.Model
         /// 名称
         /// </summary>
         public string name { get; set; }
+
+
+        /// <summary>
+        /// 头像
+        /// </summary>
+        public string headurl { get; set; }
+
+        /// <summary>
+        /// 头像
+        /// </summary>
+        public int status { get; set; }
     }
 }

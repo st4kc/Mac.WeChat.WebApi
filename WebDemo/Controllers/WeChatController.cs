@@ -1520,6 +1520,45 @@ namespace WebDemo.Controllers
         }
 
 
+
         #endregion 二次登陆
+
+        #region 个人信息
+        /// <summary>
+        /// 获取个人信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("info/get")]
+        public IHttpActionResult GetInfo(BaseModel model)
+        {
+            ApiServerMsg result = new ApiServerMsg();
+            try
+            {
+                if (_dicSockets.ContainsKey(model.uuid))
+                {
+                    
+                    result.Success = true;
+                    result.Context = JsonConvert.SerializeObject( _dicSockets[model.uuid].weChatThread.wxUser);
+                    return Ok(result);
+                }
+                else
+                {
+                    result.Success = false;
+                    result.Context = "不存在该websocket连接";
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception e)
+            {
+                result.Success = false;
+                result.ErrContext = e.Message;
+                return Ok(result);
+            }
+        }
+
+        #endregion 个人信息
     }
 }

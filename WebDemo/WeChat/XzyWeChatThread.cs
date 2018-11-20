@@ -41,7 +41,7 @@ namespace WebDemo.WeChat
         public string cheshouWxid = "";
         public string groupId = "";
        
-        private WxUser wxUser = new WxUser();
+        public WxUser wxUser = new WxUser();
         private List<WxGroup> wxGroup { get; set; }
 
         Dictionary<string, string> dicRedPack;
@@ -468,6 +468,8 @@ namespace WebDemo.WeChat
 
                     this.wxUser.wxid = QRCodejson.UserName;
                     this.wxUser.name = QRCodejson.NickName;
+                    this.wxUser.headurl = QRCodejson.HeadUrl;
+                    this.wxUser.status = QRCodejson.Status;
                     var pass = QRCodejson.Password;
                     XzyWxApis.WXQRCodeLogin(pointerWxUser, username, pass, (int)pushStr1);
                     var datas = MarshalNativeToManaged((IntPtr)pushStr);

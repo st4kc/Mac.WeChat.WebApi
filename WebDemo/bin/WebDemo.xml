@@ -301,6 +301,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:WebDemo.Controllers.WeChatController.GetInfo(WebDemo.Model.BaseModel)">
+            <summary>
+            获取个人信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="P:WebDemo.Model.ApiServerMsg.Success">
             <summary>
             是否成功标记
@@ -718,6 +725,16 @@
         <member name="P:WebDemo.Model.WxUser.name">
             <summary>
             名称
+            </summary>
+        </member>
+        <member name="P:WebDemo.Model.WxUser.headurl">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:WebDemo.Model.WxUser.status">
+            <summary>
+            头像
             </summary>
         </member>
         <member name="M:WebDemo.Util.EUtils.ESendSNS(System.Int32,System.String)">
