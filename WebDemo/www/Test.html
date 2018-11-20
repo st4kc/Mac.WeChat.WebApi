@@ -9,7 +9,7 @@
 
         if ("WebSocket" in window) {
             // 打开一个 web socket
-            var ws = new WebSocket("ws://localhost:55355/api/wechat/socket/connect?uuid=" + uuid);
+            var ws = new WebSocket("ws://macwechat.keduoduo.online/api/wechat/socket/connect?uuid=" + uuid);
             ws.onopen = function () {
                 // Web Socket 已连接上，使用 send() 方法发送数据
                 //扫码登录

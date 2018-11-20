@@ -1243,6 +1243,12 @@
             <param name="ticket"></param>
             <returns></returns>
         </member>
+        <member name="M:WebDemo.WeChat.XzyWeChatThread.Wx_Logout">
+            <summary>
+            注销
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:WebDemo.WeChat.XzyWeChatThread.Wx_GetContact(System.String)">
             <summary>
             获取好友详情
