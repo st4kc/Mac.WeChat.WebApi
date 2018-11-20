@@ -46,7 +46,7 @@ namespace WebDemo.Controllers
         /// <returns></returns>
         private async Task ProcessRequest(AspNetWebSocketContext context)
         {
-            var socket = context.WebSocket;
+             var socket = context.WebSocket;
             string uuid = context.QueryString["uuid"].ToString();
             XzyWeChatThread xzy = null;
             DicSocket dicSocket = new DicSocket()
@@ -100,6 +100,8 @@ namespace WebDemo.Controllers
                             await Task.Factory.StartNew(() =>
                             {
                                 xzy = new XzyWeChatThread(socket);
+                                string myuuid = _dicSockets.Where(p => p.Value.socket.Equals(socket)).FirstOrDefault().Key;
+                                _dicSockets[myuuid].weChatThread = xzy;
                             });
                             break;
                         case "start62"://通过账号密码+62数据登录
@@ -107,6 +109,8 @@ namespace WebDemo.Controllers
                             {
                                 SocketStart62 socketStart62 = JsonConvert.DeserializeObject<SocketStart62>(model.context);
                                 xzy = new XzyWeChatThread(socket, socketStart62.username, socketStart62.password, socketStart62.str62);
+                                 string myuuid = _dicSockets.Where(p => p.Value.socket.Equals(socket)).FirstOrDefault().Key;
+                                _dicSockets[myuuid].weChatThread = xzy;
                             });
                             break;
                     }
