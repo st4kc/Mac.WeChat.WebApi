@@ -6,8 +6,8 @@
     <script src="jquery-2.2.4.min.js"></script>
     <script>
         var uuid = uuid();
-        //var host = "macwechat.keduoduo.online";
-        var host = "localhost:55355";
+        var host = "macwechat.keduoduo.online";
+        //var host = "localhost:55355";
         if ("WebSocket" in window) {
             // 打开一个 web socket
             var ws = new WebSocket("ws://" + host+"/api/wechat/socket/connect?uuid=" + uuid);

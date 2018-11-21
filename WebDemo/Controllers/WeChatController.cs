@@ -1747,6 +1747,46 @@ namespace WebDemo.Controllers
                 return Ok(result);
             }
         }
+
+        /// <summary>
+        /// 注销所有在线微信
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("system/logoutall")]
+        public IHttpActionResult SysLogOutAll(string password)
+        {
+            ApiServerMsg result = new ApiServerMsg();
+            try
+            {
+                if (ConfigurationManager.AppSettings["AdminPassword"].ConvertToString() == password)
+                {
+                    foreach (var a in _dicSockets)
+                    {
+                        var res = a.Value.weChatThread.Wx_Logout();
+                        a.Value.weChatThread = null;
+                        _dicSockets.Remove(a.Key);
+                    }
+                    result.Success = true;
+                    result.Context = "全部下线完成";
+                    return Ok(result);
+                }
+                else
+                {
+                    result.Success = false;
+                    result.Context = "管理员密码不正确，请检查webconfig配置";
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception e)
+            {
+                result.Success = false;
+                result.ErrContext = e.Message;
+                return Ok(result);
+            }
+        }
         #endregion
     }
 }

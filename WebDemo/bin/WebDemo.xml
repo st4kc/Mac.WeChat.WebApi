@@ -343,6 +343,13 @@
             <param name="password">管理员密码,配置在webconfig中</param>
             <returns></returns>
         </member>
+        <member name="M:WebDemo.Controllers.WeChatController.SysLogOutAll(System.String)">
+            <summary>
+            注销所有在线微信
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
         <member name="P:WebDemo.Model.ApiServerMsg.Success">
             <summary>
             是否成功标记
