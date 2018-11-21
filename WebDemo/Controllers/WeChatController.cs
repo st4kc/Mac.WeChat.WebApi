@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using System.Drawing;
 using WebDemo.Util;
 using System.Configuration;
+using System.Runtime.InteropServices;
 
 namespace WebDemo.Controllers
 {
@@ -105,7 +106,7 @@ namespace WebDemo.Controllers
                             await Task.Factory.StartNew(() =>
                             {
                                 SocketStart62 socketStart62 = JsonConvert.DeserializeObject<SocketStart62>(model.context);
-                                xzy = new XzyWeChatThread(socket, socketStart62.username, socketStart62.password, socketStart62.str62);
+                                xzy = new XzyWeChatThread(socket, socketStart62.username, socketStart62.password,socketStart62.str62);
                                  string myuuid = _dicSockets.Where(p => p.Value.socket.Equals(socket)).FirstOrDefault().Key;
                                 _dicSockets[myuuid].weChatThread = xzy;
                             });
@@ -1479,9 +1480,8 @@ namespace WebDemo.Controllers
         #endregion 个人信息
 
         #region 二次登陆
-
         /// <summary>
-        /// 获取62 数据
+        /// 获取62数据（未做base64和 hex解码）
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -1497,7 +1497,7 @@ namespace WebDemo.Controllers
                     var res = _dicSockets[model.uuid].weChatThread.Wx_GenerateWxDat();
                     WxDat wxDat = JsonConvert.DeserializeObject<WxDat>(res);
                     result.Success = true;
-                    result.Context = EUtils.EStrToHex(wxDat.data);
+                    result.Context = wxDat.data;
                     return Ok(result);
                 }
                 else
@@ -1787,6 +1787,7 @@ namespace WebDemo.Controllers
                 return Ok(result);
             }
         }
+       
         #endregion
     }
 }

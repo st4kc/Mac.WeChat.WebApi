@@ -296,7 +296,7 @@
         </member>
         <member name="M:WebDemo.Controllers.WeChatController.Get62(WebDemo.Model.BaseModel)">
             <summary>
-            获取62 数据
+            获取62数据（未做base64和 hex解码）
             </summary>
             <param name="model"></param>
             <returns></returns>
