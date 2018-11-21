@@ -234,7 +234,6 @@ C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\roslyn\VBCSCompiler.exe
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\roslyn\VBCSCompiler.exe.config
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\FromHeaderAttribute.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Nancy.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Newtonsoft.Json.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\NLog.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\SuperSocket.ClientEngine.dll
@@ -254,7 +253,6 @@ C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\System.Web.Http.Cors.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\System.Web.Http.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\System.Web.Http.WebHost.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Xzy.IPAD.Core.dll
-C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Nancy.xml
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Newtonsoft.Json.xml
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\NLog.xml
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\SuperSocket.ProtoBase.xml
@@ -272,3 +270,4 @@ C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.csproj.Core
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.csproj.CopyComplete
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.pdb
+C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.csprojAssemblyReference.cache

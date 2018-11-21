@@ -222,10 +222,10 @@
       <publishTime>02/01/2018 12:19:26</publishTime>
     </File>
     <File Include="bin/WebDemo.dll">
-      <publishTime>11/21/2018 23:21:14</publishTime>
+      <publishTime>11/21/2018 23:40:45</publishTime>
     </File>
     <File Include="bin/WebDemo.pdb">
-      <publishTime>11/21/2018 23:21:14</publishTime>
+      <publishTime>11/21/2018 23:40:45</publishTime>
     </File>
     <File Include="bin/Xzy.Framework.dll">
       <publishTime>10/19/2018 11:41:49</publishTime>
@@ -270,13 +270,13 @@
       <publishTime>11/14/2018 12:57:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/21/2018 23:21:15</publishTime>
+      <publishTime>11/21/2018 23:40:45</publishTime>
     </File>
     <File Include="www/jquery-2.2.4.min.js">
       <publishTime>10/18/2018 15:24:36</publishTime>
     </File>
     <File Include="www/Test.html">
-      <publishTime>11/21/2018 23:15:57</publishTime>
+      <publishTime>11/21/2018 23:39:43</publishTime>
     </File>
     <File Include="www/WeChat.html">
       <publishTime>10/18/2018 19:44:05</publishTime>
