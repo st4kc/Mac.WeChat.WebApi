@@ -47,26 +47,22 @@ namespace WebDemo.Controllers
         /// <returns></returns>
         private async Task ProcessRequest(AspNetWebSocketContext context)
         {
-             var socket = context.WebSocket;
+            var socket = context.WebSocket;
             string uuid = context.QueryString["uuid"].ToString();
             XzyWeChatThread xzy = null;
-            DicSocket dicSocket = new DicSocket()
-            {
-                socket = socket,
-                weChatThread = xzy
-            };
             if (_dicSockets.ContainsKey(uuid))
             {
-                try
-                {
-                    await _dicSockets[uuid].socket.CloseAsync(WebSocketCloseStatus.Empty, string.Empty, CancellationToken.None);//如果client发起close请求，对client进行ack
-                }
-                catch (Exception ex)
-                {
-                    LogServer.Info(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "socketErr:" + ex.Message);
-                }
+                _dicSockets[uuid].socket = socket;
             }
-            _dicSockets.Add(uuid, dicSocket);
+            else
+            {
+                DicSocket dicSocket = new DicSocket()
+                {
+                    socket = socket,
+                    weChatThread = xzy
+                };
+                _dicSockets.Add(uuid, dicSocket);
+            }
             while (true)
             {
                 var buffer = new ArraySegment<byte>(new byte[1024]);
@@ -1542,6 +1538,43 @@ namespace WebDemo.Controllers
                     
                     result.Success = true;
                     result.Context = JsonConvert.SerializeObject( _dicSockets[model.uuid].weChatThread.wxUser);
+                    return Ok(result);
+                }
+                else
+                {
+                    result.Success = false;
+                    result.Context = "不存在该websocket连接";
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception e)
+            {
+                result.Success = false;
+                result.ErrContext = e.Message;
+                return Ok(result);
+            }
+        }
+
+        /// <summary>
+        /// 微信注销
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("info/logout")]
+        public IHttpActionResult LogOut(BaseModel model)
+        {
+            ApiServerMsg result = new ApiServerMsg();
+            try
+            {
+                if (_dicSockets.ContainsKey(model.uuid))
+                {
+
+                    var res = _dicSockets[model.uuid].weChatThread.Wx_Logout();
+                    _dicSockets.Remove(model.uuid);
+                    result.Success = true;
+                    result.Context = res;
                     return Ok(result);
                 }
                 else

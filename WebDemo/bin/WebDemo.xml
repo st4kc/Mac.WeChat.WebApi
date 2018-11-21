@@ -308,6 +308,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:WebDemo.Controllers.WeChatController.LogOut(WebDemo.Model.BaseModel)">
+            <summary>
+            微信注销
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebDemo.Controllers.WeChatController.GetContact(WebDemo.Model.BaseModel)">
             <summary>
             获取好友列表
