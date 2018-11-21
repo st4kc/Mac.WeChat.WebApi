@@ -308,6 +308,34 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:WebDemo.Controllers.WeChatController.GetContact(WebDemo.Model.BaseModel)">
+            <summary>
+            获取好友列表
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebDemo.Controllers.WeChatController.GetGroup(WebDemo.Model.BaseModel)">
+            <summary>
+            获取群组列表
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebDemo.Controllers.WeChatController.GetGzh(WebDemo.Model.BaseModel)">
+            <summary>
+            获取公众号列表
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebDemo.Controllers.WeChatController.SysGetAllOnline(System.String)">
+            <summary>
+            查询所有在线微信
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
         <member name="P:WebDemo.Model.ApiServerMsg.Success">
             <summary>
             是否成功标记

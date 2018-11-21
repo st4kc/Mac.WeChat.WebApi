@@ -15,6 +15,7 @@ using System.Web.WebSockets;
 using Newtonsoft.Json;
 using System.Drawing;
 using WebDemo.Util;
+using System.Configuration;
 
 namespace WebDemo.Controllers
 {
@@ -1560,5 +1561,161 @@ namespace WebDemo.Controllers
         }
 
         #endregion 个人信息
+
+        #region 粉丝数据
+        /// <summary>
+        /// 获取好友列表
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("contact/getcontact")]
+        public IHttpActionResult GetContact(BaseModel model)
+        {
+            ApiServerMsg result = new ApiServerMsg();
+            try
+            {
+                if (_dicSockets.ContainsKey(model.uuid))
+                {
+                    
+                    result.Success = true;
+                    result.Context = JsonConvert.SerializeObject( _dicSockets[model.uuid].weChatThread.wxContacts);
+                    return Ok(result);
+                }
+                else
+                {
+                    result.Success = false;
+                    result.Context = "不存在该websocket连接";
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception e)
+            {
+                result.Success = false;
+                result.ErrContext = e.Message;
+                return Ok(result);
+            }
+        }
+
+        /// <summary>
+        /// 获取群组列表
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("contact/getgroup")]
+        public IHttpActionResult GetGroup(BaseModel model)
+        {
+            ApiServerMsg result = new ApiServerMsg();
+            try
+            {
+                if (_dicSockets.ContainsKey(model.uuid))
+                {
+
+                    result.Success = true;
+                    result.Context = JsonConvert.SerializeObject(_dicSockets[model.uuid].weChatThread.wxGroups);
+                    return Ok(result);
+                }
+                else
+                {
+                    result.Success = false;
+                    result.Context = "不存在该websocket连接";
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception e)
+            {
+                result.Success = false;
+                result.ErrContext = e.Message;
+                return Ok(result);
+            }
+        }
+
+        /// <summary>
+        /// 获取公众号列表
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("contact/getgzh")]
+        public IHttpActionResult GetGzh(BaseModel model)
+        {
+            ApiServerMsg result = new ApiServerMsg();
+            try
+            {
+                if (_dicSockets.ContainsKey(model.uuid))
+                {
+
+                    result.Success = true;
+                    result.Context = JsonConvert.SerializeObject(_dicSockets[model.uuid].weChatThread.wxGzhs);
+                    return Ok(result);
+                }
+                else
+                {
+                    result.Success = false;
+                    result.Context = "不存在该websocket连接";
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception e)
+            {
+                result.Success = false;
+                result.ErrContext = e.Message;
+                return Ok(result);
+            }
+        }
+        #endregion 粉丝数据
+
+
+        #region 系统管理
+        /// <summary>
+        /// 查询所有在线微信
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("system/getallonline")]
+        public IHttpActionResult SysGetAllOnline(string password)
+        {
+            ApiServerMsg result = new ApiServerMsg();
+            try
+            {
+                if (ConfigurationManager.AppSettings["AdminPassword"].ConvertToString()==password)
+                {
+                    List<OnlineWxModel> onlineWxModels = new List<OnlineWxModel>();
+                    foreach (var a in _dicSockets) {
+                        OnlineWxModel onlineWx = new OnlineWxModel();
+                        onlineWx.uuid = a.Key;
+                        onlineWx.wxid = a.Value.weChatThread.wxUser.wxid;
+                        onlineWx.nickname = a.Value.weChatThread.wxUser.name;
+                        onlineWx.headimg = a.Value.weChatThread.wxUser.headurl;
+                        onlineWx.contactcount = a.Value.weChatThread.wxContacts.Count;
+                        onlineWx.groupcount = a.Value.weChatThread.wxGroups.Count;
+                        onlineWx.gzhcount = a.Value.weChatThread.wxGzhs.Count;
+                        onlineWxModels.Add(onlineWx);
+                    }
+                    result.Success = true;
+                    result.Context = JsonConvert.SerializeObject(onlineWxModels);
+                    return Ok(result);
+                }
+                else
+                {
+                    result.Success = false;
+                    result.Context = "管理员密码不正确，请检查webconfig配置";
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception e)
+            {
+                result.Success = false;
+                result.ErrContext = e.Message;
+                return Ok(result);
+            }
+        }
+        #endregion
     }
 }

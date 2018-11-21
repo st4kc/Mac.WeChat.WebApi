@@ -51,7 +51,13 @@ namespace WebDemo.WeChat
 
         List<string> WxGfUserName = new List<string>() { "qmessage", "qqmail", "tmessage", "floatbottle", "medianote", "weixin", "qqsafe", "fmessage", "filehelper" };
         List<string> BiaoQingList = new List<string>() { "[微笑]", "[色]", "[得意]", "[害羞]", "[呲牙]", "[憨笑]", "", "[调皮]", "[大笑]", "", "", "", "[鼓掌]", "[嘿哈]", "[机智]", "", "[红包]" };
-        List<Contact> AllContacts = new List<Contact>();
+
+
+        public List<Contact> wxContacts = new List<Contact>();
+
+        public List<Contact> wxGroups = new List<Contact>();
+
+        public List<Contact> wxGzhs = new List<Contact>();
 
         private int mHeartBeatInterval = 1000 * 10;
         private int mReConnectionInterval = 1000 * 10;
@@ -1620,6 +1626,7 @@ namespace WebDemo.WeChat
                         }
                         if (c.UserName.IndexOf("@chatroom") == -1 && c.UserName.IndexOf("gh_") == -1)
                         {
+                            wxContacts.Add(c);
                             SocketModel model = new SocketModel() {
                                 action = "getcontact",
                                 context = JsonConvert.SerializeObject(c)
@@ -1628,6 +1635,7 @@ namespace WebDemo.WeChat
                         }
                         else if (c.UserName.IndexOf("@chatroom") != -1)
                         {
+                            wxGroups.Add(c);
                             SocketModel model = new SocketModel()
                             {
                                 action = "getgroup",
@@ -1637,6 +1645,7 @@ namespace WebDemo.WeChat
                         }
                         else if (c.UserName.IndexOf("gh_") != -1)
                         {
+                            wxGzhs.Add(c);
                             SocketModel model = new SocketModel()
                             {
                                 action = "getgzh",
@@ -1644,7 +1653,6 @@ namespace WebDemo.WeChat
                             };
                             WebSocketSend(JsonConvert.SerializeObject(model));
                         }
-
                     }
                     if (con == 0) { break; }
                 }
