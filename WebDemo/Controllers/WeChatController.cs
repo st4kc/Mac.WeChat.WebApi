@@ -1516,8 +1516,6 @@ namespace WebDemo.Controllers
             }
         }
 
-
-
         #endregion 二次登陆
 
         #region 个人信息
@@ -1572,6 +1570,7 @@ namespace WebDemo.Controllers
                 {
 
                     var res = _dicSockets[model.uuid].weChatThread.Wx_Logout();
+                    _dicSockets[model.uuid].weChatThread = null;
                     _dicSockets.Remove(model.uuid);
                     result.Success = true;
                     result.Context = res;
@@ -1702,12 +1701,11 @@ namespace WebDemo.Controllers
         }
         #endregion 粉丝数据
 
-
         #region 系统管理
         /// <summary>
         /// 查询所有在线微信
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="password">管理员密码,配置在webconfig中</param>
         /// <returns></returns>
         [HttpGet]
         [Route("system/getallonline")]
