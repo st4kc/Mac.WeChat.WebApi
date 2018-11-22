@@ -199,5 +199,9 @@ namespace WebDemo.Util
             Image image = Image.FromStream(ms);
             return image;
         }
+
+        public static string Utf8ToAnsi(this string str) {
+            return Encoding.Default.GetString(Encoding.UTF8.GetBytes(str));
+        }
     }
 }

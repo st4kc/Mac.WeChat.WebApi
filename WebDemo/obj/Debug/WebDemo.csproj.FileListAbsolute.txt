@@ -271,3 +271,5 @@ C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.csproj.Copy
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.pdb
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Debug\WebDemo.csprojAssemblyReference.cache
+C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Microsoft.Owin.Host.HttpListener.dll
+C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Microsoft.Owin.Host.HttpListener.xml

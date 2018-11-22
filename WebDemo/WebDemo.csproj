@@ -52,6 +52,9 @@
       <HintPath>..\packages\FromHeaderAttribute.2.0.4\lib\net45\FromHeaderAttribute.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.4.0.0\lib\net451\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -159,7 +162,6 @@
     <Compile Include="Model\HttpModel.cs" />
     <Compile Include="Model\SocketModel.cs" />
     <Compile Include="Util\ConvertUtils.cs" />
-    <Compile Include="Util\EUtils.cs" />
     <Compile Include="WxModel\AgreeDuty.cs" />
     <Compile Include="WxModel\ApiServerMsg.cs" />
     <Compile Include="WxModel\AtomicFunc.cs" />
