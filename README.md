@@ -5,7 +5,9 @@
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=3194af004cbc013eff0a61b99a46ae6f66c2c1f1fc62a9cdf58de1fd2b471058">加入qq群</a>
 <br/>
-<a href="https://github.com/changtuiqie/Mac.WeChat.WebApi/blob/master/API.txt" title="支持功能API文档">支持功能API文档</a><br/>
+<a href="https://github.com/changtuiqie/Mac.WeChat.WebApi/blob/master/API.txt" title="支持功能API文档">支持功能API文档（直接调用Xzy.IPAD.Core.dll）</a><br/>
+
+如不行直接调用Xzy.IPAD.Core.dll 可以通过部署该项目 使用websocket+webapi的形式调用
 
 该项目使用websocket和webapi的形式进行服务端与前端通讯，
 查看使用方法查看<a href="https://github.com/changtuiqie/Mac.WeChat.WebApi/blob/master/WebDemo/www/Test.html"> www/test.html </a>
