@@ -176,3 +176,5 @@ C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Release\WebDemo.csproj.Co
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Release\WebDemo.csproj.CopyComplete
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Release\WebDemo.dll
 C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\obj\Release\WebDemo.pdb
+C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Microsoft.Owin.Host.HttpListener.dll
+C:\xm\git\Xzy.Mac.WeChat\Mac.WeChat.WebApi\WebDemo\bin\Microsoft.Owin.Host.HttpListener.xml

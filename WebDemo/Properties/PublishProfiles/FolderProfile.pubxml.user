@@ -14,6 +14,9 @@
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>10/16/2017 14:14:32</publishTime>
     </File>
+    <File Include="bin/Microsoft.Owin.Host.HttpListener.dll">
+      <publishTime>02/13/2018 16:28:10</publishTime>
+    </File>
     <File Include="bin/Nancy.dll">
       <publishTime>09/26/2018 18:41:44</publishTime>
     </File>
@@ -222,10 +225,10 @@
       <publishTime>02/01/2018 12:19:26</publishTime>
     </File>
     <File Include="bin/WebDemo.dll">
-      <publishTime>11/21/2018 23:40:45</publishTime>
+      <publishTime>11/22/2018 17:06:47</publishTime>
     </File>
     <File Include="bin/WebDemo.pdb">
-      <publishTime>11/21/2018 23:40:45</publishTime>
+      <publishTime>11/22/2018 17:06:47</publishTime>
     </File>
     <File Include="bin/Xzy.Framework.dll">
       <publishTime>10/19/2018 11:41:49</publishTime>
@@ -270,13 +273,13 @@
       <publishTime>11/14/2018 12:57:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/21/2018 23:40:45</publishTime>
+      <publishTime>11/22/2018 17:06:47</publishTime>
     </File>
     <File Include="www/jquery-2.2.4.min.js">
       <publishTime>10/18/2018 15:24:36</publishTime>
     </File>
     <File Include="www/Test.html">
-      <publishTime>11/21/2018 23:39:43</publishTime>
+      <publishTime>11/22/2018 09:55:23</publishTime>
     </File>
     <File Include="www/WeChat.html">
       <publishTime>10/18/2018 19:44:05</publishTime>
